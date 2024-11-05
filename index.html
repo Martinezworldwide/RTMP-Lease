@@ -5,73 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martinez TV Network</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("open");
-        }
-    </script>
 </head>
 <body>
     <header>
-        <div class="header-content">
-            <h1>Martinez TV Network</h1>
-            <div class="tv-icon">&#128250;</div>
-            <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
-        </div>
-        <nav id="menu" class="sidebar-menu">
+        <h1>Martinez TV Network</h1>
+        <nav>
             <ul>
-                <li><a href="#business">Business</a></li>
-                <li><a href="#automotive">Automotive</a></li>
-                <li><a href="#music">Music</a></li>
-                <li><a href="#essentials">Essentials</a></li>
-                <li><a href="#sports-management">Sport Management</a></li>
-                <li><a href="#movies">Movies</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#fashion">Fashion</a></li>
-                <li><a href="#esports">eSports</a></li>
-                <li><a href="#educational">Educational</a></li>
-                <li><a href="#technology">Technology</a></li>
-                <li><a href="#industrial-analysis">Industrial Analysis</a></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/buisnesstv')">Business</button></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/techtv')">Technology</button></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/educationaltv')">Educational</button></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/automotivetv')">Automotive</button></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/essentialstv')">Essentials</button></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/esportstv')">eSports</button></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/moviestv')">Movies</button></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/musictv')">Music</button></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/analysistv')">Industrial Analysis</button></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/eventstv')">Events</button></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/fashiontv')">Fashion</button></li>
+                <li><button onclick="openModal('https://engineeredsystems.wixsite.com/sportstv')">Sport Management</button></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <!-- Channel Sections -->
-        <section id="sports-management" class="channel">
-            <h2>Sport Management</h2>
-            <p>Featured Show: <strong>Str1ker Coach TV</strong></p>
-        </section>
+    <div id="tvModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <iframe id="channelFrame" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
 
-        <section id="esports" class="channel">
-            <h2>eSports</h2>
-            <p>Featured Show: <strong>Ace Toymaker</strong></p>
-        </section>
-
-        <section id="fashion" class="channel">
-            <h2>Fashion</h2>
-            <p>Featured Show: <strong>Fashion Group TV</strong></p>
-        </section>
-
-        <section id="events" class="channel">
-            <h2>Events</h2>
-            <p>Featured Show: <strong>Art Gallery Chat</strong></p>
-        </section>
-
-        <section id="technology" class="channel">
-            <h2>Technology</h2>
-            <p>Featured Show: <strong>Live Stream</strong></p>
-        </section>
-
-        <!-- Additional Channels -->
-        <section id="business" class="channel"><h2>Business</h2></section>
-        <section id="automotive" class="channel"><h2>Automotive</h2></section>
-        <section id="music" class="channel"><h2>Music</h2></section>
-        <section id="essentials" class="channel"><h2>Essentials</h2></section>
-        <section id="movies" class="channel"><h2>Movies</h2></section>
-        <section id="educational" class="channel"><h2>Educational</h2></section>
-        <section id="industrial-analysis" class="channel"><h2>Industrial Analysis</h2></section>
-    </main>
+    <script src="script.js"></script>
 </body>
 </html>
