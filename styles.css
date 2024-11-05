@@ -1,0 +1,67 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #1a1a1a url('https://www.transparenttextures.com/patterns/carbon-fiber-v2.png');
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #001f3f;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px solid #990000;
+}
+
+header h1 {
+    color: #990000;
+    font-size: 2rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #990000;
+}
+
+main {
+    padding: 2rem;
+}
+
+.channel {
+    background-color: #002244;
+    border: 1px solid #990000;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.channel h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #990000;
+    padding-bottom: 0.5rem;
+}
+
+.channel p {
+    color: #cccccc;
+    font-size: 1.1rem;
+}
