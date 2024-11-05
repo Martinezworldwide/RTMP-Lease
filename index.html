@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martinez TV Network</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("open");
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1>Martinez TV Network</h1>
-        <nav>
+        <div class="header-content">
+            <h1>Martinez TV Network</h1>
+            <div class="tv-icon">&#128250;</div>
+            <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        </div>
+        <nav id="menu" class="sidebar-menu">
             <ul>
                 <li><a href="#business">Business</a></li>
                 <li><a href="#automotive">Automotive</a></li>
