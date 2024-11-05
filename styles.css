@@ -1,3 +1,6 @@
+/* styles.css */
+
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     background: #1a1a1a url('https://www.transparenttextures.com/patterns/carbon-fiber-v2.png');
@@ -6,89 +9,190 @@ body {
     padding: 0;
 }
 
+/* Header Styles */
 header {
     background-color: #001f3f;
     padding: 1rem;
     text-align: center;
+    position: relative;
     border-bottom: 2px solid #990000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 header h1 {
     color: #990000;
+    font-size: 1.5rem;
+    flex-grow: 1;
+    animation: fadeInDown 1s ease;
+}
+
+.tv-icon {
     font-size: 2rem;
+    color: #990000;
+    animation: glow 2s infinite alternate;
 }
 
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
+@keyframes glow {
+    from { text-shadow: 0 0 5px #990000; }
+    to { text-shadow: 0 0 20px #990000; }
 }
 
-nav ul li {
-    margin: 0.5rem;
-}
-
-nav ul li button {
-    background-color: #002244;
+.menu-toggle {
+    background: none;
     color: #ffffff;
-    border: 1px solid #990000;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    font-size: 2rem;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
-nav ul li button:hover {
-    background-color: #990000;
+/* Sidebar Menu Styles */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: #001f3f;
+    transition: 0.3s;
+    z-index: 100;
 }
 
+.sidebar-menu.open {
+    left: 0;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 2rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-menu ul li button {
+    background: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 0;
+    transition: color 0.3s;
+}
+
+.sidebar-menu ul li button:hover {
+    color: #990000;
+}
+
+/* Main Content Styles */
+main {
+    padding: 2rem;
+}
+
+.channel {
+    background-color: #002244;
+    border: 1px solid #990000;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.channel h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #990000;
+    padding-bottom: 0.5rem;
+}
+
+.channel p {
+    color: #cccccc;
+    font-size: 1.1rem;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 200;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
+    overflow: auto;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-content {
-    position: relative;
+    background-color: #001f3f;
     margin: 5% auto;
+    padding: 0;
+    border: 2px solid #990000;
     width: 80%;
     max-width: 800px;
-    background-color: #000;
-    border: 5px solid #990000;
-    border-radius: 10px;
-    padding: 0;
-    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
 }
 
-.modal-content::before {
-    content: '';
-    display: block;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+.modal-header {
+    background-color: #990000;
+    color: #ffffff;
+    padding: 1rem;
+    border-bottom: 2px solid #001f3f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.modal-header span {
+    font-size: 1.5rem;
 }
 
 .close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #fff;
-    font-size: 2rem;
+    color: #ffffff;
+    font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #cccccc;
+    text-decoration: none;
+}
+
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+@media screen and (max-width: 600px) {
+    iframe {
+        height: 300px;
+    }
 }
